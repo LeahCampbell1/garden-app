@@ -13,7 +13,7 @@ Users will respond to prompts and receive statements regarding plant care
 - Git
 
 ## Installation
-- Clone repository <https://github.com/LeahCampbell1/garden-app>
+- Clone repository <https://github.com/LeahCampbell1/garden-app.git>
 - Open the garden app directory in the terminal
 - Run "garden_advice.py" with either of the following commands
 
