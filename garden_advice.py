@@ -51,6 +51,13 @@ def get_plant_type():
 def get_advice(season, plant_type):
     # Variable to hold gardening advice
     advice = ""
+    advice_statement = [
+        'Water your plants regularly and provide some shade.\n',
+        'Protect your plants from frost with covers.\n',
+        'No advice for this season.\n',
+        'Use fertiliser to encourage blooms.\n',
+        'Keep an eye out for pests!\n',
+        'No advice for this type of plant.\n']
 
     # Determine advice based on the season
     '''
@@ -58,11 +65,11 @@ def get_advice(season, plant_type):
     Advice is returned accordingly
     '''
     if season == "summer":
-        advice += "Water your plants regularly and provide some shade.\n"
+        advice += advice_statement[0]
     elif season == "winter":
-        advice += "Protect your plants from frost with covers.\n"
+        advice += advice_statement[1]
     else:
-        advice += "No advice for this season.\n"
+        advice += advice_statement[2]
 
     # Determine advice based on the plant type
     '''
@@ -70,11 +77,11 @@ def get_advice(season, plant_type):
     Advice is returned accordingly.
     '''
     if plant_type == "flower":
-        advice += "Use fertiliser to encourage blooms."
+        advice += advice_statement[3]
     elif plant_type == "vegetable":
-        advice += "Keep an eye out for pests!"
+        advice += advice_statement[4]
     else:
-        advice += "No advice for this type of plant."
+        advice += advice_statement[5]
 
     # Print the generated advice
     print(advice)
