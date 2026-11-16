@@ -1,4 +1,14 @@
-# Hardcoded values for the season and plant type
+# Garden advice application
+'''
+This application provides gardening advice for the users requirements.
+The program accepts user input and returns statements printed to the console
+'''
+
+# Accept user input for season with try-except
+'''
+Value error is returned if non-string input is entered.
+User input is validated against a list of values
+'''
 while True:
     try:
         season = input("Enter: 'summer' or 'winter'").lower()
@@ -13,6 +23,11 @@ while True:
     else:
         break
 
+# Accept user input for plant type with try-except
+'''
+Value error is returned if non-string input is entered.
+User input is validated against a list of values
+'''
 while True:
     try:
         plant_type = input("Enter 'flower' or 'vegetable': ").lower()
@@ -32,6 +47,10 @@ while True:
 advice = ""
 
 # Determine advice based on the season
+'''
+Acceptable seasons are "summer" or "winter".
+Advice is returned accordingly
+'''
 if season == "summer":
     advice += "Water your plants regularly and provide some shade.\n"
 elif season == "winter":
@@ -40,6 +59,10 @@ else:
     advice += "No advice for this season.\n"
 
 # Determine advice based on the plant type
+'''
+Acceptable seasons are "flower" or "vegetable".
+Advice is returned accordingly.
+'''
 if plant_type == "flower":
     advice += "Use fertiliser to encourage blooms."
 elif plant_type == "vegetable":
