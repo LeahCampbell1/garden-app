@@ -1,6 +1,32 @@
 # Hardcoded values for the season and plant type
-season = "summer"  # TODO: Replace with input() to allow user interaction.
-plant_type = "flower"  # TODO: Replace with input() to allow user interaction.
+while True:
+    try:
+        season = input("Enter: 'summer' or 'winter'").lower()
+        # TODO: Replace with input() to allow user interaction.
+    except ValueError as error:
+        print("Input invalid")
+        print(error)
+    valid_inputs = ['summer', 'winter']
+    if season not in valid_inputs:
+        print("Please enter a valid season")
+        continue
+    else:
+        break
+
+while True:
+    try:
+        plant_type = input("Enter 'flower' or 'vegetable': ").lower()
+    except ValueError as error:
+        print("Invalid input")
+        print(error)
+    valid_inputs = ['flower', 'vegetable']
+    if plant_type not in valid_inputs:
+        print("Please enter a valid plant type")
+        continue
+    else:
+        break
+
+# TODO: Replace with input() to allow user interaction.
 
 # Variable to hold gardening advice
 advice = ""
