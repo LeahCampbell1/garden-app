@@ -48,9 +48,17 @@ def get_plant_type():
     return plant_type
 
 
+# Define function to output planting advice to user
 def get_advice(season, plant_type):
     # Variable to hold gardening advice
     advice = ""
+    advice_statement = [
+        'Water your plants regularly and provide some shade.\n',
+        'Protect your plants from frost with covers.\n',
+        'No advice for this season.\n',
+        'Use fertiliser to encourage blooms.\n',
+        'Keep an eye out for pests!\n',
+        'No advice for this type of plant.\n']
 
     # Determine advice based on the season
     '''
@@ -58,11 +66,11 @@ def get_advice(season, plant_type):
     Advice is returned accordingly
     '''
     if season == "summer":
-        advice += "Water your plants regularly and provide some shade.\n"
+        advice += advice_statement[0]
     elif season == "winter":
-        advice += "Protect your plants from frost with covers.\n"
+        advice += advice_statement[1]
     else:
-        advice += "No advice for this season.\n"
+        advice += advice_statement[2]
 
     # Determine advice based on the plant type
     '''
@@ -70,14 +78,37 @@ def get_advice(season, plant_type):
     Advice is returned accordingly.
     '''
     if plant_type == "flower":
-        advice += "Use fertiliser to encourage blooms."
+        advice += advice_statement[3]
     elif plant_type == "vegetable":
-        advice += "Keep an eye out for pests!"
+        advice += advice_statement[4]
     else:
-        advice += "No advice for this type of plant."
+        advice += advice_statement[5]
 
     # Print the generated advice
     print(advice)
+
+
+# Define function to recommend planting option to user
+def get_recommendation(season, plant_type):
+    '''
+    Prints recommendation to reader on what to plant based on origional input
+    Recommendations from:
+    https://www.gardenersworld.com/how-to/grow-plants/eight-plants-that-flower-all-summer/
+    '''
+    plant = [
+        "Geranium ‘Rozanne’ or Agapanthus (African Lily)",
+        "Lettuce or Carrots",
+        "Snowdrops or Pansies",
+        "Parsnips or Kale"
+    ]
+    if season == "summer" and plant_type == "flower":
+        print(plant[0])
+    elif season == "summer" and plant_type == "vegetable":
+        print(plant[1])
+    elif season == "winter" and plant_type == "flower":
+        print(plant[2])
+    elif season == "winter" and plant_type == "vegetable":
+        print(plant[3])
 
 
 while True:
@@ -86,6 +117,8 @@ while True:
         season = get_season()
         plant_type = get_plant_type()
         get_advice(season, plant_type)
+        print("Advice on what to plant:\n")
+        get_recommendation(season, plant_type)
         continue
     elif choice == 0:
         print("See you later")
@@ -94,9 +127,3 @@ while True:
         print("Select a valid choice")
         continue
 
-
-# TODO: Examples of possible features to add:
-# - Add detailed comments explaining each block of code.
-# - Refactor the code into functions for better readability and modularity.
-# - Store advice in a dictionary for multiple plants and seasons.
-# - Recommend plants based on the entered season.
