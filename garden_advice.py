@@ -112,6 +112,16 @@ def get_recommendation(season, plant_type):
         print(plant[3])
 
 
+# Welcome message for application
+welcome_message = '''
+    Welcome to the gardening app. If you enter the details for the season
+    and plant type you require, advice will be generated for you.
+    '''
+
+# Prints welcome message to user
+print(welcome_message)
+
+# While loop delivers program choices for user interaction
 while True:
     choice = int(input("Enter '1' to proceed or '0' to exit: "))
     if choice == 1:
