@@ -8,13 +8,12 @@ The program accepts user input and returns statements printed to the console
 # Accept user input for season with try-except
 def get_season():
     '''
-    Value error is returned if non-string input is entered.
+    Value error is returned if input or format is invalid.
     User input is validated against a list of values
     '''
     while True:
         try:
             season = input("Enter: 'summer' or 'winter': ").lower()
-            # TODO: Replace with input() to allow user interaction.
         except ValueError as error:
             print("Input invalid")
             print(error)
@@ -30,7 +29,7 @@ def get_season():
 # Accept user input for plant type with try-except
 def get_plant_type():
     '''
-    Value error is returned if non-string input is entered.
+    Value error is returned if input or format is invalid.
     User input is validated against a list of values
     '''
     while True:
@@ -50,6 +49,10 @@ def get_plant_type():
 
 # Define function to output planting advice to user
 def get_advice(season, plant_type):
+    '''
+    Advice for user input is generated in this function.
+    Inputs from get_season() and get_plant_type() are passed as variables.
+    '''
     # Variable to hold gardening advice
     advice = ""
     advice_statement = [
@@ -61,10 +64,9 @@ def get_advice(season, plant_type):
         'No advice for this type of plant.\n']
 
     # Determine advice based on the season
-    '''
-    Acceptable seasons are "summer" or "winter".
-    Advice is returned accordingly
-    '''
+    # Acceptable seasons are "summer" or "winter".
+    # Advice is returned accordingly
+
     if season == "summer":
         advice += advice_statement[0]
     elif season == "winter":
@@ -73,10 +75,9 @@ def get_advice(season, plant_type):
         advice += advice_statement[2]
 
     # Determine advice based on the plant type
-    '''
-    Acceptable seasons are "flower" or "vegetable".
-    Advice is returned accordingly.
-    '''
+    # Acceptable plat types are "flower" or "vegetable".
+    # Advice is returned accordingly.
+
     if plant_type == "flower":
         advice += advice_statement[3]
     elif plant_type == "vegetable":
@@ -91,7 +92,7 @@ def get_advice(season, plant_type):
 # Define function to recommend planting option to user
 def get_recommendation(season, plant_type):
     '''
-    Prints recommendation to reader on what to plant based on origional input
+    Prints recommendation to reader on what to plant based on original input
     Recommendations from:
     https://www.gardenersworld.com/how-to/grow-plants/eight-plants-that-flower-all-summer/
     '''
@@ -126,4 +127,3 @@ while True:
     else:
         print("Select a valid choice")
         continue
-
